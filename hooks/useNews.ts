@@ -12,6 +12,6 @@ export const useNews = (category: Category) => {
       return allPages.length + 1;
     },
     initialPageParam: 1,
-    staleTime: 5 * 60 * 1000, // Data dianggap fresh selama 5 menit
+    staleTime: 5 * 60 * 1000, 
   });
 };

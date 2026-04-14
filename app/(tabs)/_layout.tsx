@@ -8,8 +8,8 @@ export default function TabLayout() {
       tabBarActiveTintColor: '#089182',
       tabBarInactiveTintColor: '#94A3B8',
       tabBarStyle: { 
-        height: 75,           // ⬆️ Tinggikan bar-nya (dari 65 ke 75 atau 80)
-        paddingBottom: 80,    // ⬆️ Ini yang ngangkat ikon ke atas menjauhi bezel bawah HP
+        height: 75,           
+        paddingBottom: 80,    
         paddingTop: 10 
       }
     }}>

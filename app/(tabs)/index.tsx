@@ -14,13 +14,12 @@ import {
 import { useRouter } from 'expo-router';
 import { NewsCard } from '../../components/NewsCard';
 import { useNews } from '../../hooks/useNews';
-import { useApp } from '../../context/AppContext'; // Import Context untuk Dark Mode
+import { useApp } from '../../context/AppContext'; 
 
 export default function HomeScreen() {
   const [category, setCategory] = useState('general');
   const router = useRouter();
   
-  // Ambil status tema dari Context
   const { isDarkMode } = useApp();
 
   const { data, isLoading, isError, error, refetch, fetchNextPage, hasNextPage, isFetchingNextPage } = useNews(category as any);
@@ -50,11 +49,11 @@ export default function HomeScreen() {
       <View style={{ 
         paddingHorizontal: 16, 
         paddingBottom: 16,
-        // Trik ketinggian header lo
+ 
         paddingTop: Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 8 : 16,
         borderBottomWidth: 1, 
-        borderBottomColor: isDarkMode ? '#334155' : '#E2E8F0', // Berubah gelap
-        backgroundColor: isDarkMode ? '#0F172A' : '#FFFFFF'   // Berubah gelap
+        borderBottomColor: isDarkMode ? '#334155' : '#E2E8F0', 
+        backgroundColor: isDarkMode ? '#0F172A' : '#FFFFFF'   
       }}>
         <Text style={{ fontSize: 24, fontWeight: 'bold', color: isDarkMode ? '#F8FAFC' : '#0F172A' }}>
           Berita Utama

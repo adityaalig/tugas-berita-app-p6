@@ -11,7 +11,7 @@ export default function BookmarksScreen() {
       <View style={[styles.header, { 
         backgroundColor: isDarkMode ? '#0F172A' : '#FFFFFF',
         borderBottomColor: isDarkMode ? '#334155' : '#E2E8F0',
-        paddingTop: Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 8 : 16, // Trik penurun header
+        paddingTop: Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 8 : 16, 
       }]}>
         <Text style={[styles.title, { color: isDarkMode ? '#F8FAFC' : '#0F172A' }]}>Tersimpan</Text>
       </View>

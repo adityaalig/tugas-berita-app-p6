@@ -17,7 +17,6 @@ import { NewsCard } from '../../components/NewsCard';
 import { useNewsSearch } from '../../hooks/useSearch';
 import { useApp } from '../../context/AppContext';
 
-// Ganti sumber berita dengan Kategori
 const AVAILABLE_CATEGORIES = [
   { id: 'general', name: 'Umum' },
   { id: 'business', name: 'Bisnis' },
@@ -44,13 +43,11 @@ export default function SearchScreen() {
   const [query, setQuery] = useState('');
   const [showFilters, setShowFilters] = useState(false);
   
-  // State untuk Kategori, bukan lagi Source
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>();
   const [dateRange, setDateRange] = useState<'today' | 'week' | 'month' | undefined>();
 
   const dates = dateRange ? getDateRange(dateRange) : { from: undefined, to: undefined };
   
-  // Kirim selectedCategory ke hook pencarian
   const { data, isLoading } = useNewsSearch(query, selectedCategory, dates.from, dates.to); 
   const articles = data?.articles || [];
 
